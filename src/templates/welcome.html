@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="contact/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>about</title>
+</head>
+<body>
+        <div class="navbar navbar-expand-lg navbar-light bg-light">
+                <a href="/" id="topDir" class="navbar-brand">Homepage</a>
+                <a href="/about" id="topDir" class="navbar-brand">About</a>
+                <a href="/contact" id="topDir" class="navbar-brand">Contact us</a>
+                <a href="/login" id="topDir" class="navbar-brand">Login</a>
+                <a href="/register" id="topDir" class="navbar-brand">Register</a>
+
+        </div>
+
+{% csrf_token %}
+Welcome, {{e}}!
+</body>
+</html>
+
+

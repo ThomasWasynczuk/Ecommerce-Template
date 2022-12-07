@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+    <title>Hello, world!</title>
+</head>
+<body>
+
+
+        <!--  -->
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+        
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+        
+        <script>
+          // Your web app's Firebase configuration
+          var firebaseConfig = {
+            apiKey: "AIzaSyCG9CEMR4ClQpP_X2dDkm9zOf9f2s6Q_Mk",
+            authDomain: "artini-22c83.firebaseapp.com",
+            databaseURL: "https://artini-22c83.firebaseio.com",
+            projectId: "artini-22c83",
+            storageBucket: "artini-22c83.appspot.com",
+            messagingSenderId: "850015264518",
+            appId: "1:850015264518:web:a0992497b42dec2f320887",
+            measurementId: "G-XE11DK6PDX"
+          };
+          // Initialize Firebase
+          firebase.initializeApp(firebaseConfig);
+          firebase.analytics();
+        </script>
+
+
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+            <a href="/" id="topDir" class="navbar-brand">Homepage</a>
+            <a href="/about" id="topDir" class="navbar-brand">About</a>
+            <a href="/contact" id="topDir" class="navbar-brand">Contact us</a>
+            <a href="/login" id="topDir" class="navbar-brand">Login</a>
+            <a href="/register" id="topDir" class="navbar-brand">Register</a>
+    </div>
+
+
+
+    <div class='text-center'>
+    <h1>{{ title }}</h1>
+    <h1>All good!</h1>
+    </div>
+
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+        </div>
+    </div> -->
+
+    <table style="width:100%" id="table">
+            <tr id="tr">
+              <th>Wall Art</th>
+
+              <th>Description</th>
+
+              <th>Price</th>
+            </tr>
+            <tr> 
+                <th>
+                    <img src="https://cdn.britannica.com/s:300x1000/87/2087-004-264616BB.jpg"/>
+                </th>
+                <th>
+                    Some good art
+                </th>
+                <th>
+                    20$
+                </th>
+            </tr>
+            <tr>
+                    <th>
+                            <img src="https://images-na.ssl-images-amazon.com/images/I/412PNTbPALL._SX425_.jpg"/>
+                        </th>
+                        <th>
+                            clay pot
+                        </th>
+                        <th>
+                            20$
+                        </th>
+            </tr>
+              <tr>
+                    <th>
+                            <img src="https://i.pinimg.com/originals/e0/64/95/e06495606cab10f7b6ea00f20e98d4ac.jpg" width="400px" height="auto"/>
+                        </th>
+                        <th>
+                            A five year old did this can you believe it
+                        </th>
+                        <th>
+                            2,000,000$
+                        </th>
+            </tr>
+          </table>
+
+          <script>
+                var database = firebase.database();
+                database.ref().once('value', function(snapshot){
+                    if(snapshot.exists()){
+                        var content = '';
+                        snapshot.forEach(function(data){
+                            var val = data.val();
+                            content +='<tr>';
+                            content += '<td> ' + '<img src="'+ val.url + '"> </td>';
+                            content += '<td>' + val.id + '</td>';
+                            content += '</tr>';
+                        });
+                        $('#table').append(content);
+                    }
+                });
+            </script>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

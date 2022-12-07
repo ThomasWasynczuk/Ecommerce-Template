@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Contact</title>
+</head>
+<body>
+        <div class="navbar navbar-expand-lg navbar-light bg-light">
+                <a href="/" id="topDir" class="navbar-brand">Homepage</a>
+                <a href="/about" id="topDir" class="navbar-brand">About</a>
+                <a href="/contact" id="topDir" class="navbar-brand">Contact us</a>
+                <a href="/login" id="topDir" class="navbar-brand">Login</a>
+                <a href="/register" id="topDir" class="navbar-brand">Register</a>
+        </div>
+
+    <div class='text-center'>
+    <h1>contact page!</h1>
+    </div>
+       
+        <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class='col-sm-6 col-12'>
+                            <form method="POST"> {% csrf_token %}                            
+                                {{ form }}       
+                                <button type="submit" class="btn btn-default">Submit</button>  
+                            </form>
+
+
+
+
+
+                            <!-- <form method="POST"> {% csrf_token %}
+
+
+                                <input type="text" placeholder="Name" name="fullName" class="form-control">
+                                <input type="email" placeholder="Email" name="email" class="form-control">
+                                <textarea type="text" placeholder="Contact us" name="content" class="form-control">
+                                </textarea>
+                                <button type="submit" class="btn btn-default">Submit</button>
+                                
+                            </form> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

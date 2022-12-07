@@ -1,0 +1,69 @@
+{% if msg %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endif %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="contact/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>about</title>
+</head>
+<body>
+
+
+<!--  -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCG9CEMR4ClQpP_X2dDkm9zOf9f2s6Q_Mk",
+    authDomain: "artini-22c83.firebaseapp.com",
+    databaseURL: "https://artini-22c83.firebaseio.com",
+    projectId: "artini-22c83",
+    storageBucket: "artini-22c83.appspot.com",
+    messagingSenderId: "850015264518",
+    appId: "1:850015264518:web:a0992497b42dec2f320887",
+    measurementId: "G-XE11DK6PDX"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<!--  -->
+<div class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="/" id="topDir" class="navbar-brand">Homepage</a>
+        <a href="/about" id="topDir" class="navbar-brand">About</a>
+        <a href="/contact" id="topDir" class="navbar-brand">Contact us</a>
+        <a href="/login" id="topDir" class="navbar-brand">Login</a>
+        <a href="/register" id="topDir" class="navbar-brand">Register</a>
+</div>
+<div class='col-sm-6 col-12'>
+<!-- <form method="POST" action="/postsign/"> {% csrf_token %}                            
+        {{ form }}       
+        <button type="submit" class="btn btn-default">Submit</button>  
+    </form> -->
+    <form action="/postsign/" method="post">
+        {% csrf_token %}
+        Email :
+        <input type="email" name="email">
+        Password:
+        <input type="password" name="pass">
+        <input type="submit" value="SignIn">
+        </form>
+</div>
+
+</body>
+</html>
